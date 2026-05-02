@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Create Post</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <input type="text" name="title" placeholder="Enter Title" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <textarea name="content" placeholder="Enter Content" class="form-control" rows="5" required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <input type="file" name="image" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-success">Create Post</button>
+</form>
+<a href="/" class="btn btn-secondary mb-2">⬅ Back</a>
+{% endblock %}
